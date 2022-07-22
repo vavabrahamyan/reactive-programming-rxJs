@@ -1,0 +1,12 @@
+<div class="http-requests-container">
+  <div class="http-requests-section">
+    <div class="set-value-section flex-row gap-8">
+      <input type="text" class="newValue" [(ngModel)]="inputValue">
+      <button class="sent-value" (click)="callNext()">Call next</button>
+    </div>
+    <app-http-requests-child-component
+      *ngIf="lessons$"
+      [word]="word$ | async"
+    ></app-http-requests-child-component>
+  </div>
+</div>
