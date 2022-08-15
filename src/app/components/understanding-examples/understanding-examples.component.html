@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="testing-examples-buttons-container flex-row">
+    <button
+      class="btn grow-1 items-center"
+      [ngClass]="{ 'btn-green': !showTake }"
+      (click)="displayTake()"
+    >
+      {{ !showTake ? "Start Take" : "Stop Take" }}
+    </button>
+    <button
+    class="btn grow-1 items-center"
+    [ngClass]="{ 'btn-red': !showTakeAndTakeUntil }"
+    (click)="displayTakeAndTakeUntil()"
+  >
+    {{ !showTakeAndTakeUntil ? "Start TakeAndTakeUntil" : "Stop TakeAndTakeUntil" }}
+  </button>
+  </div>
+  <div class="operators-and-about-them flex-row">
+    <div class="operator-content operator-take-content flex-column">
+      <h2 class="title">Operator Take</h2>
+      <p class="description">
+        Operator Take gets count of taking emitted values as a parameter and
+        <br />
+        after taking all of them gets completing. In this case you can find  <br />
+        bug if you will click on button several times.<br /><br /><br />
+        You can import operator take from rxjs/operators library
+      </p>
+      <h4 class="sub-title" *ngIf="showTake">Values</h4>
+      <div class="values-container flex-row" *ngIf="showTake">
+        <div
+          class="values-sub-container flex-row"
+          *ngFor="let value of valuesFromOperatorTake"
+        >
+          <span
+            class="next-value"
+            *ngIf="valuesFromOperatorTake.indexOf(value) != 0"
+            >=></span
+          >
+          <span class="value">{{ value }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="operator-content operator-take-until-content flex-column">
+        <h2 class="title">Operators Take and TakeUntil</h2>
+        <p class="description">
+          Operator TakeUntil gets observable as a parameter and takes values
+          <br />
+          until hasn't called next function of took parameter. <br />
+          In this example we are calling next function of an observable set <br />
+          as a parameter on every start button click. In this case stream <br />
+          finishes and starts over.<br /><br /><br />
+          You can import operator takeUntil from rxjs/operators library 
+
+        </p>
+        <h4 class="sub-title" *ngIf="showTakeAndTakeUntil">Values Take And TakeUntil</h4>
+        <div class="values-container flex-row" *ngIf="showTakeAndTakeUntil">
+          <div
+            class="values-sub-container flex-row"
+            *ngFor="let value of valuesFromOperatorsTakeAndTakeUntil"
+          >
+            <span
+              class="next-value"
+              *ngIf="valuesFromOperatorsTakeAndTakeUntil.indexOf(value) != 0"
+              >=></span
+            >
+            <span class="value">{{ value }}</span>
+          </div>
+        </div>
+      </div>
+  </div>
+  <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <p>
+      <label>First Name:</label>
+      <input type="text" ngControl="firstName" />
+    </p>
+  </form>
+  For more information see the console -->
+</div>

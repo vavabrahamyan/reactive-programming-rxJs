@@ -1,18 +1,98 @@
+/* Variables*/
+$cold-blue: rgba(1,92,146,1);
+$hot-red: rgba(234,13,1,1);
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
 }
+.container {
+  max-width: 960px;
+  margin: 48px auto;
+}
+
+// classes related with flex
+
 .flex-row {
   display: flex;
   flex-direction: row;
 }
 .flex-column {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 .gap-8 {
   gap: 0.5rem;
 }
 .gap-16 {
   gap: 1rem;
+}
+.grow-1 {
+  display: flex;
+  flex-grow: 1;
+}
+.grow-2 {
+  display: flex;
+  flex-grow: 2;
+}
+.grow-3 {
+  display: flex;
+  flex-grow: 3;
+}
+.shrink-1{
+  display: flex;
+  flex-shrink: 1;
+}
+.shrink-2{
+  display: flex;
+  flex-shrink: 2;
+}
+.shrink-3{
+  display: flex;
+  flex-shrink: 3;
+}
+.items-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  height: 44px;
+  width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0px 0px 4px 4px rgb(0 0 0 / 8%);
+  &:active {
+    box-shadow: none;
+  }
+}
+.btn-md {
+  height: 30px;
+  width: 120px;
+}
+.btn-green {
+  background-color: #84bd00;
+  color: rgba(255, 255, 255, 1);
+}
+.btn-red {
+  background-color: #ff322e;
+  color: rgba(255, 255, 255, 1);
+}
+.w-100 {
+  width: 100%;
+}
+.w-75 {
+  width: 75%;
+}
+.w-50 {
+  width: 50%;
+}
+.w-25 {
+  width: 25%;
 }

@@ -1,0 +1,30 @@
+.container {
+  .testing-examples-buttons-container{
+    column-gap: 1rem;
+  }
+  .operators-and-about-them {
+    column-gap: 1rem;
+    .operator-content{
+      width: 100%;
+    }
+    .operator-take-until-content,
+    .operator-take-content {
+      .title {
+      }
+      .sub-title {
+      }
+      .description {
+      }
+      .values-container {
+        column-gap: 1rem;
+        .values-sub-container {
+          column-gap: 1rem;
+          .next-value {
+          }
+          .value {
+          }
+        }
+      }
+    }
+  }
+}

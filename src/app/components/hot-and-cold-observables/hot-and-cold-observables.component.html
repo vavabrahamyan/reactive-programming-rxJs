@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="title">
+    <h2>Hot And Cold Observables</h2>
+    <p class="hint">+ visual example</p>
+  </div>
+  <div class="description">
+    <p>
+      There are two types of observable, hot and cold. <br />
+      Cold observables start to emit values only when we subscribe to them, when
+      hot observables emit values always, dispite we have subscriber or not.
+      Cold observables ar unicast, when hot observables are multicast (it means
+      that observable share value between multiple subscribers).
+    </p>
+  </div>
+  <div class="content flex-row gap-16">
+    <div class="cold-observable flex-column w-100">
+      <h4 class="sub-title w-100 items-center cold">Cold</h4>
+      <div class="description">
+        <p>
+          In this case we emit random number from the observable. <br />
+          And as we can see, for each subscriber our observable emits <br />
+          different values. In other words, on every subscribing to  <br />
+          the observable, it has been creating again, and emit new <br />
+          created value.
+        </p>
+      </div>
+      <div class="demo-content flex-column gap-8">
+        <div class="titles flex-row gap-8">
+          <span class="w-75"></span>
+          <span class="w-75">Name</span>
+          <span class="w-100">Value</span>
+        </div>
+        <div
+          class="subscriber flex-row gap-8"
+          *ngFor="let item of coldSubscribers"
+        >
+          <button
+            class="btn btn-md shrink-1 subscribe-cold"
+            [disabled]="item.disabled"
+            (click)="subscribeToCold(item)"
+          >
+            Subscribe</button
+          ><span class="name shrink-1">{{ item.name }}-{{ item.id }}</span
+          ><span class="value">{{ item.value }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="hot-observable flex-column w-100">
+      <h4 class="sub-title w-100 items-center hot">Hot</h4>
+      <div class="description">
+        <p>In case of hot observables, we get the current time step in<br/>
+           milliseconds and then for any subscribers observable emits <br/>
+          got time step.  </p>
+      </div>
+      <div class="demo-content flex-column gap-8">
+        <div class="titles flex-row gap-8">
+          <span class="w-75"></span>
+          <span class="w-75">Name</span>
+          <span class="w-100">Value</span>
+        </div>
+        <div
+          class="subscriber flex-row gap-8"
+          *ngFor="let item of hotSubscribers"
+        >
+          <button
+            class="btn btn-md shrink-1 subscribe-hot"
+            [disabled]="item.disabled"
+            (click)="subscribeToHot(item)"
+          >
+            Subscribe</button
+          ><span class="name shrink-1">{{ item.name }}-{{ item.id }}</span
+          ><span class="value">{{ item.value }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="try-again-content items-center">
+    <button class="btn btn-green" (click)="resetValues()">Try Again</button>
+  </div>
+</div>

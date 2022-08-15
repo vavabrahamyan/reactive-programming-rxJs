@@ -1,0 +1,57 @@
+.title {
+  h2 {
+    margin-bottom: 0.25rem;
+    text-align: center;
+  }
+  p.hint {
+    margin: 0;
+    text-align: center;
+    color: rgba(0, 128, 0, 1);
+  }
+}
+.description {
+  p {
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
+.content {
+  h4.sub-title {
+    font-weight: 700;
+    font-size: 1.75rem;
+    &.cold {
+      color: rgba(1, 92, 146, 1);
+    }
+    &.hot {
+      color: rgba(234, 13, 1, 1);
+    }
+  }
+  .demo-content {
+    .subscriber,
+    .titles {
+      align-items: center;
+      .subscribe-cold {
+        background-color: rgba(1, 92, 146, 0.7);
+      }
+      .subscribe-hot {
+        background-color: rgba(234, 13, 1, 1);
+      }
+      .value {
+        margin-left: 2rem;
+      }
+    }
+  }
+  .cold-observable,
+  .hot-observable {
+    .description {
+      min-height: 8rem;
+      p {
+        width: 95%;
+      }
+    }
+  }
+}
+.try-again-content {
+  width: 100%;
+  margin: 2rem 0;
+}
