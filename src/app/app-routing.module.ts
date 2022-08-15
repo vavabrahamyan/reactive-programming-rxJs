@@ -6,6 +6,7 @@ import { MultipleHttpRequestsService } from './services/multiple-http-requests.s
 import { HttpRequestsChildComponentComponent } from './multiple-http-requests/http-requests-child-component/http-requests-child-component.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { UnderstandingExamplesComponent } from './components/understanding-examples/understanding-examples.component';
 
 const routes: Routes = [
   {
@@ -13,13 +14,22 @@ const routes: Routes = [
     component: MultipleHttpRequestsComponent,
   },
   {
+    path: 'understanding-rxjs',
+    loadChildren: ()=>import('./components/understanding-examples/understanding-examples.module').then(m=>m.UnderstandingExamplesModule),
+    component: UnderstandingExamplesComponent,
+  },
+  {
+    path: 'hot-and-cold-observables',
+    loadChildren: ()=>import('./components/hot-and-cold-observables/hot-and-cold-observables.module').then(m=>m.HotAndColdObservablesModule),
+  },
+  {
     path: '',
-    redirectTo: '/http-request',
+    redirectTo: '/hot-and-cold-observables',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: '/http-request',
+    redirectTo: '/hot-and-cold-observables',
     pathMatch: 'full',
   },
 ];
